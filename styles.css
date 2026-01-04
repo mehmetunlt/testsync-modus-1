@@ -1,0 +1,410 @@
+/* Modern CSS for AI-Powered Crypto Market Intelligence Landing Page */
+/* Font import for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* CSS Custom Properties (Variables) for consistent theming */
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --accent-color: #ff6b35; /* Orange for highlights */
+  --success-color: #28a745;
+  --dark-color: #343a40;
+  --light-color: #f8f9fa;
+  --white: #ffffff;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+
+  /* Typography */
+  --font-family-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-family-secondary: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem;  /* 8px */
+  --spacing-md: 1rem;    /* 16px */
+  --spacing-lg: 1.5rem;  /* 24px */
+  --spacing-xl: 2rem;    /* 32px */
+  --spacing-xxl: 3rem;   /* 48px */
+  --spacing-xxxl: 4rem;  /* 64px */
+
+  /* Border Radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.375rem;
+  --border-radius-lg: 0.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--gray-800);
+  background-color: var(--white);
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-secondary);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: 2.5rem; /* 40px */
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+}
+
+h3 {
+  font-size: 1.75rem; /* 28px */
+}
+
+h4 {
+  font-size: 1.5rem; /* 24px */
+}
+
+h5 {
+  font-size: 1.25rem; /* 20px */
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Buttons */
+.btn {
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-light {
+  color: var(--primary-color);
+}
+
+.btn-light:hover {
+  background-color: var(--white);
+  color: var(--secondary-color);
+}
+
+/* Navigation */
+.navbar {
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--primary-color) !important;
+}
+
+.navbar-nav .nav-link {
+  color: var(--gray-700);
+  font-weight: 500;
+  margin-right: var(--spacing-md);
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-bg {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--white);
+  padding: var(--spacing-xxl) 0;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg h1 {
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+}
+
+.hero-bg .lead {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+.placeholder-chart {
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Feature Cards */
+.feature-card {
+  border: none;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  background-color: var(--white);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.feature-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-card .card-body {
+  padding: var(--spacing-xl);
+}
+
+.feature-card i {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Sections */
+section {
+  padding: var(--spacing-xxl) 0;
+}
+
+.bg-light {
+  background-color: var(--light-color) !important;
+}
+
+/* How It Works */
+.list-group-item {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.list-group-item:first-child {
+  border-top-left-radius: var(--border-radius-md);
+  border-top-right-radius: var(--border-radius-md);
+}
+
+.list-group-item:last-child {
+  border-bottom-left-radius: var(--border-radius-md);
+  border-bottom-right-radius: var(--border-radius-md);
+}
+
+.workflow-diagram {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Testimonials */
+.blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding-left: var(--spacing-lg);
+  font-style: italic;
+  color: var(--gray-700);
+}
+
+.blockquote-footer {
+  color: var(--gray-600);
+}
+
+/* Pricing Cards */
+#pricing .card {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s ease;
+}
+
+#pricing .card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Sign Up Section */
+#signup .form-control {
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--gray-300);
+}
+
+#signup .btn {
+  margin-top: var(--spacing-lg);
+}
+
+/* CTA Section */
+.cta-bg {
+  background-color: var(--light-color);
+  color: var(--gray-800);
+}
+
+/* Footer */
+footer {
+  background-color: var(--dark-color);
+  color: var(--white);
+  padding: var(--spacing-xl) 0;
+}
+
+footer a {
+  color: var(--gray-400);
+}
+
+footer a:hover {
+  color: var(--white);
+}
+
+footer .form-control {
+  border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+}
+
+footer .btn {
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+}
+
+/* Floating CTA Button */
+.btn-floating {
+  border-radius: 50px;
+  padding: var(--spacing-md) var(--spacing-lg);
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+}
+
+.btn-floating:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Design using Bootstrap breakpoints and custom overrides */
+/* Extra small devices (phones, <576px) */
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 2rem; /* Smaller heading */
+  }
+  .hero-bg {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+  }
+  .feature-card .card-body {
+    padding: var(--spacing-lg);
+  }
+  .navbar-nav {
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+  }
+  .btn-floating {
+    display: none; /* Hide floating button on small screens */
+  }
+}
+
+/* Small devices (tablets, ≥576px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero-bg h1 {
+    font-size: 2.25rem;
+  }
+  .feature-card .card-body {
+    padding: var(--spacing-lg);
+  }
+}
+
+/* Medium devices (desktops, ≥768px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-bg h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Large devices (large desktops, ≥992px) */
+@media (min-width: 992px) {
+  .hero-bg h1 {
+    font-size: 3rem;
+  }
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Extra large devices (larger desktops, ≥1200px) */
+@media (min-width: 1200px) {
+  .hero-bg h1 {
+    font-size: 3.5rem;
+  }
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus styles for better keyboard navigation */
+.btn:focus,
+.nav-link:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #0000ff;
+    --secondary-color: #800080;
+  }
+}
+
+/* Performance optimizations: Minimize reflows and repaints */
+/* Use will-change for animations */
+.feature-card {
+  will-change: opacity, transform;
+}
+
+.btn:hover {
+  will-change: transform, box-shadow;
+}
